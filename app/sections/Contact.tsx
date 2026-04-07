@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@/app/hooks/useIntersectionObserver";
-import { personalInfo } from "@/app/lib/data";
+// import { personalInfo } from "@/app/lib/data";
 
-const contactLinks = [
-  { icon: "📞", label: "Phone", value: "+91 8504988936", href: "tel:+918504988936" },
-  { icon: "✉", label: "Email", value: "studyera.gq@gmail.com", href: "mailto:studyera.gq@gmail.com" },
-  { icon: "in", label: "LinkedIn", value: "LinkedIn — Mohit Yadav", href: personalInfo.linkedin },
-] as const;
+// const contactLinks = [
+//   { icon: "📞", label: "Phone", value: "+91 8504988936", href: "tel:+918504988936" },
+//   { icon: "✉", label: "Email", value: "studyera.gq@gmail.com", href: "mailto:studyera.gq@gmail.com" },
+//   { icon: "in", label: "LinkedIn", value: "LinkedIn — Mohit Yadav", href: personalInfo.linkedin },
+// ] as const;
 
 export default function Contact() {
   const [ref, visible] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.1 });

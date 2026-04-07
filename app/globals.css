@@ -1,0 +1,251 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   CRITICAL CSS — inlined in <head>, never render-blocking
+   Everything below the fold is deferred or lazy-loaded
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Fonts: display=swap prevents FOIT (Flash of Invisible Text) ─────────── */
+/* Loaded via next/font — zero render-blocking, self-hosted */
+
+/* ── Design Tokens (Dark theme = default) ────────────────────────────────── */
+:root {
+  --font-syne: 'Syne', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-dm-mono: 'DM Mono', monospace;
+
+  /* Backgrounds */
+  --bg: #0a0a0f;
+  --bg2: #111118;
+  --bg3: #1a1a25;
+  --card: #16161f;
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.07);
+  --border2: rgba(255, 255, 255, 0.12);
+
+  /* Text */
+  --text: #f0f0fa;
+  --text2: #9090aa;
+  --text3: #5a5a70;
+
+  /* Accent */
+  --accent: #7c6af7;
+  --accent2: #a89df5;
+  --accent-glow: rgba(124, 106, 247, 0.15);
+  --accent-soft: rgba(124, 106, 247, 0.1);
+
+  /* Semantic */
+  --green: #3dd68c;
+
+  /* Transitions */
+  --tr: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --tr-fast: 0.15s ease;
+  --tr-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Light theme (toggled by .light class on <html>) ─────────────────────── */
+.light {
+  --bg: #f5f4ff;
+  --bg2: #eeecff;
+  --bg3: #e6e3ff;
+  --card: #ffffff;
+  --border: rgba(90, 80, 200, 0.1);
+  --border2: rgba(90, 80, 200, 0.2);
+  --text: #12101f;
+  --text2: #4a4870;
+  --text3: #9090b0;
+  --accent: #5540e0;
+  --accent2: #7c6af7;
+  --accent-glow: rgba(85, 64, 224, 0.1);
+  --accent-soft: rgba(85, 64, 224, 0.07);
+}
+
+/* ── Base Reset ──────────────────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Prevent layout shift from scrollbar appearing */
+    scrollbar-gutter: stable;
+    -webkit-text-size-adjust: 100%;
+    /* Force GPU layer for smooth scrolling */
+    will-change: scroll-position;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body, "DM Sans", sans-serif);
+    font-size: 1rem;
+    line-height: 1.7;
+    overflow-x: hidden;
+    /* Smooth theme transitions */
+    transition: background var(--tr), color var(--tr);
+    /* Subpixel antialiasing for sharper text */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Focus styles — accessibility */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Smooth scrolling anchor offset for fixed nav */
+  [id] {
+    scroll-margin-top: 80px;
+  }
+
+  /* Prevent content shift from images without dimensions */
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Links */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* ── Utility Layer ───────────────────────────────────────────────────────── */
+@layer utilities {
+  /* GPU-accelerated transitions (avoid layout thrashing) */
+  .gpu {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  /* Content-visibility: skip off-screen rendering */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 400px;
+  }
+
+  /* Clamp heading utility */
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Truncation */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* ── Component Layer ─────────────────────────────────────────────────────── */
+@layer components {
+  /* Section wrapper */
+  .section-wrap {
+    @apply max-w-[1200px] mx-auto px-10 py-20;
+  }
+  @media (max-width: 768px) {
+    .section-wrap {
+      @apply px-5 py-16;
+    }
+  }
+
+  /* Tag pill */
+  .tag-pill {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.6875rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--bg3);
+    color: var(--text2);
+    border: 1px solid var(--border);
+    letter-spacing: 0.3px;
+    transition: border-color var(--tr-fast), color var(--tr-fast);
+    display: inline-block;
+  }
+
+  /* Card base */
+  .card-base {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    transition: border-color var(--tr), transform var(--tr);
+  }
+  .card-base:hover {
+    border-color: var(--border2);
+  }
+}
+
+/* ── Scrollbar styling ───────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ── Selection color ─────────────────────────────────────────────────────── */
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* ── Skeleton loader animation ───────────────────────────────────────────── */
+.skeleton-pulse {
+  background: linear-gradient(
+    90deg,
+    var(--bg3) 25%,
+    var(--bg2) 50%,
+    var(--bg3) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes skeletonShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

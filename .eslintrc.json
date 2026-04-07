@@ -1,0 +1,17 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "rules": {
+    // Enforce performance best practices
+    "@next/next/no-img-element": "error",
+    "@next/next/no-html-link-for-pages": "error",
+
+    // React
+    "react/no-unknown-property": "error",
+    "react/jsx-no-target-blank": ["error", { "enforceDynamicLinks": true }],
+
+    // General
+    "no-console": ["warn", { "allow": ["error"] }],
+    "no-unused-vars": "warn",
+    "prefer-const": "error"
+  }
+}

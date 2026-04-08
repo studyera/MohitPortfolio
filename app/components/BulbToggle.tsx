@@ -68,16 +68,15 @@ export default function BulbToggle() {
             : { filter: "drop-shadow(0 0 10px rgba(124,106,247,0.35))" }
         }
       >
-        <motion.div
+        <div
           className="absolute left-1/2 top-[19px] w-[34px] h-[34px] -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
-          animate={{
+          style={{
             opacity: isLight ? 0.75 : 0.55,
-            scale: 1,
             background: isLight
               ? "radial-gradient(circle, rgba(255,220,50,0.28) 0%, rgba(255,220,50,0.08) 34%, transparent 58%)"
               : "radial-gradient(circle, rgba(124,106,247,0.28) 0%, rgba(124,106,247,0.08) 48%, transparent 74%)",
+            transition: "opacity 0.3s ease, background 0.3s ease",
           }}
-          transition={{ duration: 0.3 }}
         />
 
         <svg
@@ -88,14 +87,12 @@ export default function BulbToggle() {
           className="absolute inset-0"
         >
           {/* Glass */}
-          <motion.path
+          <path
             d="M20 2C10.6 2 3 9.6 3 19c0 5.8 2.9 10.9 7.3 14l1.2 6H28.5l1.2-6C34.1 29.9 37 24.8 37 19c0-9.4-7.6-17-17-17z"
-            animate={{
-              fill: isLight ? "#ffe97a" : "rgba(124,106,247,0.24)",
-            }}
-            transition={{ duration: 0.3 }}
+            fill={isLight ? "#ffe97a" : "rgba(124,106,247,0.24)"}
             stroke="rgba(124,106,247,0.42)"
             strokeWidth="1.5"
+            style={{ transition: "fill 0.3s ease" }}
           />
           {/* Filament lines */}
           <path
@@ -105,27 +102,19 @@ export default function BulbToggle() {
             strokeLinecap="round"
           />
           {/* Inner glow core */}
-          <motion.circle
+          <circle
             cx="20"
             cy="19"
             r="8"
-            animate={{
-              fill: isLight
-                ? "rgba(255,220,50,0.24)"
-                : "rgba(124,106,247,0.26)",
-            }}
-            transition={{ duration: 0.3 }}
+            fill={isLight ? "rgba(255,220,50,0.24)" : "rgba(124,106,247,0.26)"}
+            style={{ transition: "fill 0.3s ease" }}
           />
-          <motion.circle
+          <circle
             cx="20"
             cy="19"
             r="5"
-            animate={{
-              fill: isLight
-                ? "rgba(255,200,0,0.6)"
-                : "rgba(168,157,245,0.72)",
-            }}
-            transition={{ duration: 0.3 }}
+            fill={isLight ? "rgba(255,200,0,0.6)" : "rgba(168,157,245,0.72)"}
+            style={{ transition: "fill 0.3s ease" }}
           />
           {/* Top nub */}
           <line

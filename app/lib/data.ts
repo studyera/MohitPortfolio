@@ -12,7 +12,7 @@ export const personalInfo = {
   location: "Gurugram, Haryana",
   email: "studyera.gq@gmail.com",
   phone: "+91 8504988936",
-  linkedin: "www.linkedin.com/in/mohit-yadav-643023157",
+  linkedin: "https://www.linkedin.com/in/mohit-yadav-643023157",
   github: "https://github.com/mohityadav",
   bio: [
     "Frontend Engineer L2 at Publicis Sapient in Gurugram. I joined PS in early 2022 and have grown from Junior Developer to L2, building enterprise frontend systems for global clients across retail and e-commerce.",
@@ -136,6 +136,58 @@ export const projects = [
     liveUrl: null,
     githubUrl: null,
     isPrivate: true,
+  },
+] as const;
+
+export const clients = [
+  {
+    id: "jeep",
+    name: "Jeep",
+    site: "jeep.com",
+    market: "Global (.com)",
+    logo: "/clients/jeep.svg",
+  },
+  {
+    id: "ram",
+    name: "Ram Trucks",
+    site: "ramtrucks.com",
+    market: "Global (.com)",
+    logo: "/clients/ram.svg",
+  },
+  {
+    id: "chrysler",
+    name: "Chrysler",
+    site: "chrysler.com",
+    market: "Global (.com)",
+    logo: "/clients/chrysler.svg",
+  },
+  {
+    id: "abarth",
+    name: "Abarth",
+    site: "abarth.it",
+    market: "Italy (.it)",
+    logo: "/clients/abarth.svg",
+  },
+  {
+    id: "alfaromeo",
+    name: "Alfa Romeo",
+    site: "alfaromeo.it",
+    market: "Italy (.it)",
+    logo: "/clients/alfaromeo.svg",
+  },
+  {
+    id: "lancia",
+    name: "Lancia",
+    site: "lancia.it",
+    market: "Italy (.it)",
+    logo: "/clients/lancia.svg",
+  },
+  {
+    id: "fiat",
+    name: "Fiat",
+    site: "fiat.it",
+    market: "Italy (.it)",
+    logo: "/clients/fiat.svg",
   },
 ] as const;
 

@@ -27,7 +27,7 @@ export default function About() {
             transition={{ duration: 0.4 }}
             className="section-num"
           >
-            04
+            05
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, x: -10 }}

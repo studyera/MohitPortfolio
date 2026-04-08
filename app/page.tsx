@@ -17,6 +17,7 @@ import { SectionSkeleton } from "@/app/components/Skeletons";
 // These are NOT loaded until the browser is idle / user scrolls near them
 // Each becomes a separate JS chunk (see splitChunks in next.config.js)
 const Experience = lazy(() => import("@/app/sections/Experience"));
+const Clients = lazy(() => import("@/app/sections/Clients"));
 const Projects = lazy(() => import("@/app/sections/Projects"));
 const Skills = lazy(() => import("@/app/sections/Skills"));
 const About = lazy(() => import("@/app/sections/About"));
@@ -43,6 +44,10 @@ export default function Home() {
       {/* ── Below-fold sections — each wrapped in Suspense ── */}
       <Suspense fallback={<SectionSkeleton />}>
         <Experience />
+      </Suspense>
+
+      <Suspense fallback={<SectionSkeleton />}>
+        <Clients />
       </Suspense>
 
       <Suspense fallback={<SectionSkeleton />}>

@@ -249,3 +249,62 @@
   0%   { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
+
+.client-marquee-mask {
+  position: relative;
+  overflow: hidden;
+  padding-block: 0.5rem;
+}
+
+.client-marquee-mask::before,
+.client-marquee-mask::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.client-marquee-mask::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg), transparent);
+}
+
+.client-marquee-mask::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg), transparent);
+}
+
+.client-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: clientMarquee 28s linear infinite;
+}
+
+.client-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.client-marquee-group {
+  display: flex;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@keyframes clientMarquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-marquee-track {
+    animation: none;
+  }
+}

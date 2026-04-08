@@ -18,7 +18,7 @@ export default function Projects() {
             transition={{ duration: 0.4 }}
             className="section-num"
           >
-            02
+            03
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, x: -10 }}

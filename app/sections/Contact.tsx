@@ -25,7 +25,7 @@ export default function Contact() {
             transition={{ duration: 0.4 }}
             className="section-num"
           >
-            05
+            06
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, x: -10 }}

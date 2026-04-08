@@ -18,7 +18,7 @@ export default function Skills() {
             transition={{ duration: 0.4 }}
             className="section-num"
           >
-            03
+            04
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, x: -10 }}

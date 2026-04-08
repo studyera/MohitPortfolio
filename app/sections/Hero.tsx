@@ -43,8 +43,8 @@ function DeveloperFigure() {
       <svg viewBox="0 0 560 560" fill="none" className="relative w-full h-auto">
         <defs>
           <linearGradient id="heroOrbit" x1="86" y1="94" x2="448" y2="472">
-            <stop offset="0%" stopColor="rgba(255,255,255,0.16)" />
-            <stop offset="100%" stopColor="rgba(255,255,255,0.02)" />
+            <stop offset="0%" stopColor="var(--border2)" />
+            <stop offset="100%" stopColor="var(--border)" />
           </linearGradient>
           <radialGradient
             id="heroBloomPrimary"
@@ -69,8 +69,8 @@ function DeveloperFigure() {
             <stop offset="100%" stopColor="rgba(61,214,140,0)" />
           </radialGradient>
           <linearGradient id="heroPanel" x1="134" y1="84" x2="432" y2="494">
-            <stop offset="0%" stopColor="rgba(22,22,31,0.96)" />
-            <stop offset="100%" stopColor="rgba(12,12,18,0.94)" />
+            <stop offset="0%" stopColor="var(--card)" />
+            <stop offset="100%" stopColor="var(--bg2)" />
           </linearGradient>
           <linearGradient id="heroScreen" x1="168" y1="132" x2="398" y2="292">
             <stop offset="0%" stopColor="rgba(168,157,245,0.18)" />
@@ -85,24 +85,24 @@ function DeveloperFigure() {
             <stop offset="100%" stopColor="#2b2238" />
           </linearGradient>
           <linearGradient id="heroHoodie" x1="210" y1="386" x2="370" y2="486">
-            <stop offset="0%" stopColor="rgba(240,240,250,0.12)" />
-            <stop offset="100%" stopColor="rgba(124,106,247,0.28)" />
+            <stop offset="0%" stopColor="var(--bg2)" />
+            <stop offset="100%" stopColor="var(--accent-soft)" />
           </linearGradient>
           <linearGradient id="heroChair" x1="322" y1="286" x2="388" y2="464">
-            <stop offset="0%" stopColor="rgba(255,255,255,0.12)" />
-            <stop offset="100%" stopColor="rgba(255,255,255,0.02)" />
+            <stop offset="0%" stopColor="var(--border2)" />
+            <stop offset="100%" stopColor="var(--border)" />
           </linearGradient>
           <linearGradient id="heroDevice" x1="190" y1="396" x2="380" y2="510">
-            <stop offset="0%" stopColor="rgba(14,14,20,0.98)" />
-            <stop offset="100%" stopColor="rgba(34,34,48,0.94)" />
+            <stop offset="0%" stopColor="var(--bg2)" />
+            <stop offset="100%" stopColor="var(--bg3)" />
           </linearGradient>
           <linearGradient id="heroChip" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="rgba(255,255,255,0.12)" />
-            <stop offset="100%" stopColor="rgba(255,255,255,0.03)" />
+            <stop offset="0%" stopColor="var(--card)" />
+            <stop offset="100%" stopColor="var(--bg2)" />
           </linearGradient>
           <linearGradient id="heroCode" x1="190" y1="162" x2="348" y2="162">
             <stop offset="0%" stopColor="var(--accent2)" />
-            <stop offset="100%" stopColor="rgba(240,240,250,0.08)" />
+            <stop offset="100%" stopColor="var(--border2)" />
           </linearGradient>
         </defs>
 
@@ -126,12 +126,12 @@ function DeveloperFigure() {
         />
         <path
           d="M436 116L484 164L436 212L388 164L436 116Z"
-          fill="rgba(255,255,255,0.02)"
+          fill="var(--card)"
           stroke="var(--border)"
         />
         <path
           d="M118 178C146 130 200 102 274 102C348 102 402 134 426 190"
-          stroke="rgba(255,255,255,0.08)"
+          stroke="var(--border2)"
           strokeWidth="1.2"
           strokeLinecap="round"
         />
@@ -145,8 +145,8 @@ function DeveloperFigure() {
           fill="url(#heroPanel)"
           stroke="var(--border2)"
         />
-        <rect x="156" y="110" width="92" height="10" rx="5" fill="rgba(240,240,250,0.08)" />
-        <rect x="260" y="110" width="54" height="10" rx="5" fill="rgba(240,240,250,0.04)" />
+        <rect x="156" y="110" width="92" height="10" rx="5" fill="var(--border2)" />
+        <rect x="260" y="110" width="54" height="10" rx="5" fill="var(--border)" />
 
         <circle cx="160" cy="152" r="5" fill="var(--accent)" />
         <circle cx="178" cy="152" r="5" fill="var(--accent2)" />
@@ -162,10 +162,10 @@ function DeveloperFigure() {
           stroke="var(--border)"
         />
         <rect x="190" y="172" width="110" height="10" rx="5" fill="url(#heroCode)" />
-        <rect x="310" y="172" width="56" height="10" rx="5" fill="rgba(240,240,250,0.16)" />
-        <rect x="190" y="198" width="160" height="8" rx="4" fill="rgba(240,240,250,0.14)" />
-        <rect x="190" y="220" width="120" height="8" rx="4" fill="rgba(240,240,250,0.1)" />
-        <rect x="190" y="242" width="148" height="8" rx="4" fill="rgba(240,240,250,0.08)" />
+        <rect x="310" y="172" width="56" height="10" rx="5" fill="var(--border2)" />
+        <rect x="190" y="198" width="160" height="8" rx="4" fill="var(--border2)" />
+        <rect x="190" y="220" width="120" height="8" rx="4" fill="var(--border)" />
+        <rect x="190" y="242" width="148" height="8" rx="4" fill="var(--border)" />
         <path
           d="M324 236L346 214L364 232L386 202"
           stroke="var(--accent)"
@@ -173,10 +173,10 @@ function DeveloperFigure() {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        <rect x="258" y="298" width="54" height="18" rx="9" fill="rgba(255,255,255,0.07)" />
+        <rect x="258" y="298" width="54" height="18" rx="9" fill="var(--bg3)" />
         <path
           d="M230 326H340L354 344H216L230 326Z"
-          fill="rgba(255,255,255,0.04)"
+          fill="var(--bg2)"
           stroke="var(--border)"
         />
 
@@ -232,7 +232,7 @@ function DeveloperFigure() {
         />
         <path
           d="M248 398C258 388 270 384 286 384C302 384 314 388 324 398L312 422C304 414 295 410 286 410C277 410 268 414 260 422L248 398Z"
-          fill="rgba(255,255,255,0.08)"
+          fill="var(--border2)"
         />
         <path
           d="M244 420C222 428 206 442 198 462L222 468C229 449 239 437 254 430Z"
@@ -252,12 +252,12 @@ function DeveloperFigure() {
           fill="url(#heroDevice)"
           stroke="var(--border2)"
         />
-        <rect x="214" y="432" width="62" height="8" rx="4" fill="rgba(240,240,250,0.16)" />
-        <rect x="214" y="452" width="92" height="8" rx="4" fill="rgba(240,240,250,0.12)" />
+        <rect x="214" y="432" width="62" height="8" rx="4" fill="var(--border2)" />
+        <rect x="214" y="452" width="92" height="8" rx="4" fill="var(--border)" />
         <rect x="214" y="472" width="54" height="8" rx="4" fill="var(--accent)" />
         <path
           d="M166 508H406L370 530H202L166 508Z"
-          fill="rgba(26,26,37,0.96)"
+          fill="var(--bg2)"
           stroke="var(--border)"
         />
         <circle cx="286" cy="458" r="12" fill="none" stroke="var(--accent2)" strokeWidth="2" />
